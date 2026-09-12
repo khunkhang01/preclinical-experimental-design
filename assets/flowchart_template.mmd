@@ -1,0 +1,25 @@
+flowchart TD
+    A[Intake: question, model, intervention, comparator, endpoint] --> B{Research-question Gate}
+    B -- unresolved --> B1[Record open decision or assumption]
+    B1 --> B
+    B -- bounded --> C[Comprehensive review and evidence matrix]
+    C --> D{Saturation Check}
+    D -- not saturated --> C
+    D -- documented --> E{Evidence Gate}
+    E -- blocked --> E1[Mark parameter UNRESOLVED or PILOT-REQUIRED]
+    E1 --> F[Roadmap with ideal and feasible designs]
+    E -- pass or blockers --> F
+    F --> G{Phase-selection Gate}
+    G -- no phase --> G1[Request PI or user decision]
+    G1 --> G
+    G -- phase selected --> H{Feasibility Gate}
+    H -- blocked --> H1[Record missing resource or safety decision]
+    H1 --> H
+    H -- feasible --> I[Protocol: groups, preparation, procedure, endpoints, statistics]
+    I --> J{Quality and Ethics Gate}
+    J -- blocked --> J1[Escalate for institutional, biosafety, welfare, or regulatory review]
+    J1 --> J
+    J -- pass or blockers --> K{Citation Integrity Gate}
+    K -- unsupported parameter --> K1[Remove from executable protocol or require pilot]
+    K1 --> I
+    K -- traceable --> L[Finalize artifacts and append-only audit trail]
